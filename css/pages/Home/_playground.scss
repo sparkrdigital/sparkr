@@ -1,0 +1,100 @@
+$playground_width: 22vw;
+
+.playground {
+    background: $dark;
+    color: $light;
+    height: 100vh;
+
+    #container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 5rem;
+        position: relative;
+
+        .horizontal_scroll {
+            width: auto;
+            display: flex;
+            align-items: center;
+            gap: 10rem;
+            width: calc($playground_width * 8);
+            height: 60vh;
+
+            img {
+                flex-shrink: 0;
+                width: $playground_width;
+                height: 100%;
+                object-fit: cover;
+                border-radius: 35px;
+
+                @for $i from 1 through 8 {
+                    &:nth-child(#{$i}) {
+                        transform: rotate(if($i % 2==0, 5deg, -5deg));
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* BreakPoints */
+@media (max-width: 1440px) {
+    .playground {
+        #container {
+            .horizontal_scroll {
+                width: calc(29vw * 8);
+
+                img {
+                    width: 29vw;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1040px) {
+    .playground {
+        #container {
+            gap: 10rem;
+            .horizontal_scroll {
+                width: calc(40vw * 8);
+                max-height: 550px;
+
+                img {
+                    width: 40vw;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .playground {
+        #container {
+            .horizontal_scroll {
+                width: calc(55vw * 8);
+                max-height: 550px;
+
+                img {
+                    width: 55vw;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 540px) {
+    .playground {
+        #container {
+            .horizontal_scroll {
+                width: calc(70vw * 8);
+                max-height: 400px;
+                gap: 5rem;
+
+                img {
+                    width: 70vw;
+                }
+            }
+        }
+    }
+}

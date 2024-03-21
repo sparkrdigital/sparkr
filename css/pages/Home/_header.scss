@@ -1,0 +1,275 @@
+.header {
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	position: relative;
+	background: $light;
+}
+
+.main-header {
+	padding: 20px 20px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.nav {
+	display: flex;
+}
+
+.nav li {
+	list-style: none;
+	color: #222 !important;
+}
+
+nav {
+	background: transparent;
+}
+
+.links a {
+	color: #101010;
+	font-size: 1rem;
+	text-transform: capitalize;
+	letter-spacing: var(--spacing);
+	display: block;
+	padding: 0.5rem 1rem;
+	transition: all 0.3s linear;
+}
+.links a:hover {
+	color: #ff463a;
+	padding-left: 1.5rem;
+}
+
+.nav-position {
+	position: relative;
+	display: none;
+}
+
+.links {
+	transition: all 0.3s linear;
+}
+
+.show-links {
+	height: 10rem;
+}
+
+.nav-toggle {
+	position: relative;
+	width: 60px;
+	height: 60px;
+	border-radius: 50%;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.burger {
+	width: 100%;
+	position: relative;
+	z-index: 50;
+}
+
+.burger::after,
+.burger::before {
+	content: '';
+	display: block;
+	height: 2px;
+	width: 50%;
+	margin: auto;
+	position: relative;
+	transition: transform 0.3s;
+	z-index: 100;
+}
+
+.burger::after,
+.burger::before {
+	background-color: #111111;
+}
+
+.burger::after {
+	top: -5px;
+}
+
+.burger::before {
+	top: 5px;
+}
+
+.burger.active::after {
+	transform: rotate(45deg);
+	top: -1px;
+}
+
+.burger.active::before {
+	transform: rotate(-45deg);
+	top: 0px;
+}
+
+.right-nav {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+
+.nav-header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 1rem;
+	padding-bottom: 0rem;
+}
+
+@media screen and (min-width: 800px) {
+	.right-nav {
+		display: none;
+	}
+
+	.nav-center {
+		max-width: 1170px;
+		margin: 0 auto;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: 1rem;
+	}
+	.nav-header {
+		padding: 0;
+	}
+	.nav-toggle {
+		display: none;
+	}
+	.links {
+		height: auto;
+		display: flex;
+	}
+	.links a {
+		padding: 0;
+		margin: 0 0.5rem;
+	}
+	.links a:hover {
+		padding: 0;
+		background: transparent;
+	}
+	.social-icons {
+		display: flex;
+	}
+	.social-icons a {
+		margin: 0 0.5rem;
+		color: #101010;
+		transition: all 0.3s linear;
+	}
+	.social-icons a:hover {
+		color: var(--clr-primary-7);
+	}
+	.nav-position {
+		display: block;
+	}
+}
+
+.sidebar-toggle {
+	position: fixed;
+	top: 2rem;
+	right: 3rem;
+	font-size: 2rem;
+	background: transparent;
+	border-color: transparent;
+	color: #101010;
+	transition: all 0.3s linear;
+	cursor: pointer;
+	animation: bounce 2s ease-in-out infinite;
+}
+.sidebar-toggle:hover {
+	color: var(--clr-primary-7);
+}
+@keyframes bounce {
+	0% {
+		transform: scale(1);
+	}
+	50% {
+		transform: scale(1.5);
+	}
+	100% {
+		transform: scale(1);
+	}
+}
+
+.sidebar-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 1rem 1.5rem;
+}
+.close-btn {
+	font-size: 1.75rem;
+	background: transparent;
+	border-color: transparent;
+	color: #101010;
+	transition: all 0.3s linear;
+	cursor: pointer;
+	color: var(--clr-red-dark);
+}
+
+.close-btn:hover {
+	color: var(--clr-red-light);
+	transform: rotate(360deg);
+}
+.logo {
+	justify-self: center;
+	height: 40px;
+}
+
+.side-links a {
+	display: block;
+	font-size: 1.5rem;
+	text-transform: capitalize;
+	padding: 1rem 1.5rem;
+	color: #101010;
+	transition: all 0.3s linear;
+}
+.side-links a:hover {
+	background: var(--clr-primary-8);
+	color: #101010;
+	padding-left: 1.75rem;
+}
+.social-icons {
+	justify-self: center;
+	display: flex;
+	padding-bottom: 2rem;
+}
+.social-icons a {
+	font-size: 1.5rem;
+	margin: 0 0.5rem;
+	color: #101010;
+	transition: all 0.3s linear;
+}
+.social-icons a:hover {
+	color: var(--clr-primary-1);
+}
+
+.sidebar {
+	position: fixed;
+	z-index: 999;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: #fff;
+	display: grid;
+	grid-template-rows: auto 1fr auto;
+	row-gap: 1rem;
+	box-shadow: var(--clr-red-dark);
+	transition: all 0.3s linear;
+	transform: translate(-100%);
+}
+.show-sidebar {
+	transform: translate(0);
+}
+
+@media screen and (min-width: 676px) {
+	.sidebar {
+		width: 400px;
+	}
+}

@@ -1,0 +1,69 @@
+.about_clients {
+    background: $dark;
+    color: $light;
+    @include verticalGap;
+
+    #container {
+        h3 {
+            max-width: 960px;
+        }
+
+        .brands {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 8rem;
+
+            .brand_wrapper {
+                width: 100%;
+                max-width: 900px;
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                place-items: center;
+                gap: 8rem;
+
+                img {
+                    width: 120px;
+                    filter: brightness(40%);
+                    transition: filter 0.3s ease-in-out;
+
+                    &:hover {
+                        filter: brightness(100%);
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* BreakPoints */
+@media (max-width: 540px) {
+    .about_clients {
+        #container {
+            .brands {
+                margin-top: 5rem;
+
+                .brand_wrapper {
+                    grid-template-columns: 1fr 1fr;
+
+                    img {
+                        width: 100px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 320px) {
+    .about_clients {
+        #container {
+            .brands {
+                .brand_wrapper {
+                    grid-template-columns: 1fr;
+                    gap: 4rem;
+                }
+            }
+        }
+    }
+}

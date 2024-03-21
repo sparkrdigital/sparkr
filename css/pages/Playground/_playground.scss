@@ -1,0 +1,162 @@
+#playground {
+    height: 100vh;
+    overflow: hidden;
+    background: $dark;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    #gallery {
+        height: 90%;
+        width: 90%;
+        position: relative;
+
+        .frame {
+            position: absolute;
+            width: 12vw;
+            height: 280px;
+            z-index: 1;
+            border-radius: 20px;
+
+            &:hover {
+                z-index: 2;
+            }
+
+            &:nth-child(1) {
+                top: 0%;
+                left: 10%;
+                background: url("../../../assets/playground1.gif") no-repeat 50% 50%;
+                background-size: cover;
+            }
+
+            &:nth-child(2) {
+                bottom: 1%;
+                left: 40%;
+                background: url("../../../assets/playground2.gif") no-repeat 50% 50%;
+                background-size: cover;
+            }
+
+            &:nth-child(3) {
+                top: 20%;
+                left: 25%;
+                background: url("../../../assets/playground3.gif") no-repeat 50% 50%;
+                background-size: cover;
+            }
+
+            &:nth-child(4) {
+                top: 10%;
+                left: 40%;
+                background: url("../../../assets/playground4.gif") no-repeat 50% 50%;
+                background-size: cover;
+            }
+
+            &:nth-child(5) {
+                bottom: 0%;
+                left: 11%;
+                background: url("../../../assets/playground5.gif") no-repeat 50% 50%;
+                background-size: cover;
+            }
+
+            &:nth-child(6) {
+                top: 50%;
+                left: 28%;
+                background: url("../../../assets/playground6.gif") no-repeat 50% 50%;
+                background-size: cover;
+            }
+
+            &:nth-child(7) {
+                top: 0%;
+                right: 8%;
+                background: url("../../../assets/playground7.gif") no-repeat 50% 50%;
+                background-size: cover;
+            }
+
+            &:nth-child(8) {
+                bottom: 0%;
+                right: 8%;
+                background: url("../../../assets/playground8.gif") no-repeat 50% 50%;
+                background-size: cover;
+            }
+
+            &:nth-child(9) {
+                top: 40%;
+                left: 75%;
+                background: url("../../../assets/playground9.webp") no-repeat 50% 50%;
+                background-size: cover;
+            }
+
+            &:nth-child(10) {
+                top: 18%;
+                left: 0%;
+                background: url("../../../assets/playground10.webp") no-repeat 50% 50%;
+                background-size: cover;
+            }
+
+            &:nth-child(11) {
+                bottom: 8%;
+                right: 28%;
+                background: url("../../../assets/playground11.webp") no-repeat 50% 50%;
+                background-size: cover;
+            }
+
+            &:nth-child(12) {
+                top: 50%;
+                left: 4%;
+                background: url("../../../assets/playground12.webp") no-repeat 50% 50%;
+                background-size: cover;
+            }
+
+            &:nth-child(13) {
+                top: 21%;
+                right: 0%;
+                background: url("../../../assets/playground13.webp") no-repeat 50% 50%;
+                background-size: cover;
+            }
+
+            &:nth-child(14) {
+                top: 31%;
+                right: 40%;
+                background: url("../../../assets/playground14.webp") no-repeat 50% 50%;
+                background-size: cover;
+            }
+
+            &:nth-child(15) {
+                top: 5%;
+                right: 25%;
+                background: url("../../../assets/playground15.webp") no-repeat 50% 50%;
+                background-size: cover;
+            }
+        }
+    }
+}
+
+@media (max-width: 1660px) {
+    #playground {
+        #gallery {
+            .frame {
+                width: 14vw;
+            }
+        }
+    }
+}
+
+@media (max-width: 1040px) {
+    #playground {
+        #gallery {
+            .frame {
+                width: 18vw;
+            }
+        }
+    }
+}
+
+@media (max-width: 560px) {
+    #playground {
+        #gallery {
+            .frame {
+                width: 40vw;
+                height: 200px;
+            }
+        }
+    }
+}
